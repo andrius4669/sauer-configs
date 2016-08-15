@@ -1,6 +1,6 @@
 #!/bin/sh
 exec 2>&1
-cd /home/zero/srv/venice
+cd "$HOME/srv/venice"
 
 mkfifo logfeed >/dev/null 2>&1 || :
 touch -a log

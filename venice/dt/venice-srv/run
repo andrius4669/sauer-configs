@@ -1,0 +1,8 @@
+#!/bin/sh
+exec 2>&1
+cd /home/zero/srv/venice
+
+mkfifo cmdfeed >/dev/null 2>&1 || :
+exec 7<>cmdfeed
+ulimit -c unlimited
+exec ./venice <&7 >>log 2>&1

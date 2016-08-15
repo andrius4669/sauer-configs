@@ -1,0 +1,9 @@
+#!/bin/sh
+export HOME=/home/racing
+export USER=racing
+exec setuidgid "$USER" svscan "$HOME/service"
+
+#USER='racing'
+#cd /home/racing/srv
+#setcap -q CAP_NET_BIND_SERVICE+pe ./racing
+#exec setuidgid "$USER" ./racing >>log 2>/dev/null

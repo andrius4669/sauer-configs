@@ -1,0 +1,8 @@
+#!/bin/sh
+exec 2>&1
+cd ~/srv
+
+mkfifo cmdfeed >/dev/null 2>&1 || :
+mkfifo logfeed >/dev/null 2>&1 || :
+exec 7<>logfeed
+exec ./ircbot.pl <&7 >cmdfeed 2>>ircbotlog

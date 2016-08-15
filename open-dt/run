@@ -1,0 +1,4 @@
+#!/bin/sh
+SID=open0
+cd "$HOME/srv/$SID" || exit 111
+exec "./$SID" -glog
